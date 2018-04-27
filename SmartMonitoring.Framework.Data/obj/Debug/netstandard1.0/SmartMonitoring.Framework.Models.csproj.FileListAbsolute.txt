@@ -1,0 +1,8 @@
+C:\work\SmartTrack\apps\SmartMonitoring\source\SmartMonitoring.Framework.Data\obj\Debug\netstandard1.0\SmartMonitoring.Framework.Models.csproj.CoreCompileInputs.cache
+C:\work\SmartTrack\apps\SmartMonitoring\source\SmartMonitoring.Framework.Data\obj\Debug\netstandard1.0\SmartMonitoring.Framework.Models.AssemblyInfoInputs.cache
+C:\work\SmartTrack\apps\SmartMonitoring\source\SmartMonitoring.Framework.Data\obj\Debug\netstandard1.0\SmartMonitoring.Framework.Models.AssemblyInfo.cs
+C:\work\SmartTrack\apps\SmartMonitoring\source\SmartMonitoring.Framework.Data\bin\Debug\netstandard1.0\SmartMonitoring.Framework.Models.deps.json
+C:\work\SmartTrack\apps\SmartMonitoring\source\SmartMonitoring.Framework.Data\bin\Debug\netstandard1.0\SmartMonitoring.Framework.Models.dll
+C:\work\SmartTrack\apps\SmartMonitoring\source\SmartMonitoring.Framework.Data\bin\Debug\netstandard1.0\SmartMonitoring.Framework.Models.pdb
+C:\work\SmartTrack\apps\SmartMonitoring\source\SmartMonitoring.Framework.Data\obj\Debug\netstandard1.0\SmartMonitoring.Framework.Models.dll
+C:\work\SmartTrack\apps\SmartMonitoring\source\SmartMonitoring.Framework.Data\obj\Debug\netstandard1.0\SmartMonitoring.Framework.Models.pdb

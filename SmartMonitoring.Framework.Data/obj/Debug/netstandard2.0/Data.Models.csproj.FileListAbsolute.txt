@@ -1,0 +1,9 @@
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\bin\Debug\netstandard2.0\SchoolWayz.Data.Models.deps.json
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\bin\Debug\netstandard2.0\SchoolWayz.Data.Models.dll
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\bin\Debug\netstandard2.0\SchoolWayz.Data.Models.pdb
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\obj\Debug\netstandard2.0\Data.Models.csproj.CoreCompileInputs.cache
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\obj\Debug\netstandard2.0\Data.Models.AssemblyInfoInputs.cache
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\obj\Debug\netstandard2.0\Data.Models.AssemblyInfo.cs
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\obj\Debug\netstandard2.0\SchoolWayz.Data.Models.dll
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\obj\Debug\netstandard2.0\SchoolWayz.Data.Models.pdb
+C:\work\infowayz\SchoolWayz\source\apps\Data.Models\obj\Debug\netstandard2.0\Data.Models.csprojResolveAssemblyReference.cache

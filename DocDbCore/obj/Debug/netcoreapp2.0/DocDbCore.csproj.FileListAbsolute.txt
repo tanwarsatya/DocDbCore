@@ -1,0 +1,14 @@
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\bin\Debug\netcoreapp2.0\DocDbCore.deps.json
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\bin\Debug\netcoreapp2.0\DocDbCore.runtimeconfig.json
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\bin\Debug\netcoreapp2.0\DocDbCore.runtimeconfig.dev.json
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\bin\Debug\netcoreapp2.0\DocDbCore.dll
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\obj\Debug\netcoreapp2.0\DocDbCore.csprojResolveAssemblyReference.cache
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\obj\Debug\netcoreapp2.0\DocDbCore.csproj.CoreCompileInputs.cache
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\obj\Debug\netcoreapp2.0\DocDbCore.AssemblyInfoInputs.cache
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\obj\Debug\netcoreapp2.0\DocDbCore.AssemblyInfo.cs
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\bin\Debug\netcoreapp2.0\DocDbCore.pdb
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\obj\Debug\netcoreapp2.0\DocDbCore.dll
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\obj\Debug\netcoreapp2.0\DocDbCore.pdb
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\bin\Debug\netcoreapp2.0\SmartMonitoring.Framework.Models.dll
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\bin\Debug\netcoreapp2.0\SmartMonitoring.Framework.Models.pdb
+c:\users\stanwar\source\repos\DocDbCore\DocDbCore\obj\Debug\netcoreapp2.0\DocDbCore.csproj.CopyComplete
