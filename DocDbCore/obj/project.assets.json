@@ -5020,11 +5020,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\users\\stanwar\\source\\repos\\DocDbCore\\DocDbCore\\DocDbCore.csproj",
+      "projectUniqueName": "C:\\Users\\stanwar\\source\\repos\\DocDbCore\\DocDbCore\\DocDbCore.csproj",
       "projectName": "DocDbCore",
-      "projectPath": "c:\\users\\stanwar\\source\\repos\\DocDbCore\\DocDbCore\\DocDbCore.csproj",
+      "projectPath": "C:\\Users\\stanwar\\source\\repos\\DocDbCore\\DocDbCore\\DocDbCore.csproj",
       "packagesPath": "C:\\Users\\stanwar\\.nuget\\packages\\",
-      "outputPath": "c:\\users\\stanwar\\source\\repos\\DocDbCore\\DocDbCore\\obj\\",
+      "outputPath": "C:\\Users\\stanwar\\source\\repos\\DocDbCore\\DocDbCore\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackagesFallback\\",
@@ -5049,8 +5049,8 @@
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "c:\\users\\stanwar\\source\\repos\\DocDbCore\\SmartMonitoring.Framework.Data\\SmartMonitoring.Framework.Models.csproj": {
-              "projectPath": "c:\\users\\stanwar\\source\\repos\\DocDbCore\\SmartMonitoring.Framework.Data\\SmartMonitoring.Framework.Models.csproj"
+            "C:\\Users\\stanwar\\source\\repos\\DocDbCore\\SmartMonitoring.Framework.Data\\SmartMonitoring.Framework.Models.csproj": {
+              "projectPath": "C:\\Users\\stanwar\\source\\repos\\DocDbCore\\SmartMonitoring.Framework.Data\\SmartMonitoring.Framework.Models.csproj"
             }
           }
         }

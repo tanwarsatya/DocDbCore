@@ -96,13 +96,15 @@ namespace SmartMonitoring.Framework.DocumentDB
             return (T)(dynamic)retVal;
         }
 
-        public async Task<T> FirstOrDefaultAsync(Func<T, bool> predicate)
+        public async Task<T> FirstOrDefaultAsync(Expression<Func<T, bool>> predicate)
         {
             return
-                _client.CreateDocumentQuery<T>((await _collection).DocumentsLink, new Microsoft.Azure.Documents.Client.FeedOptions { MaxItemCount = 1 })
-                    .Where(predicate)
-                    .ToList<T>().First();
-                    
+             _client.CreateDocumentQuery<T>((await _collection).DocumentsLink)
+                 .Where(predicate).Take(1).ToList().First();
+
+
+
+
         }
 
         public async Task<IQueryable<T>> WhereAsync(Expression<Func<T, bool>> predicate)
@@ -111,11 +113,11 @@ namespace SmartMonitoring.Framework.DocumentDB
                 .Where(predicate);
         }
 
-        public async Task<IEnumerable<T>> WhereAsync(Func<T, bool> predicate)
-        {
-            return _client.CreateDocumentQuery<T>((await _collection).DocumentsLink)
-                .Where(predicate).ToList<T>();
-        }
+        //public async Task<IEnumerable<T>> WhereAsync(Func<T, bool> predicate)
+        //{
+        //    return _client.CreateDocumentQuery<T>((await _collection).DocumentsLink)
+        //        .Where(predicate).ToList<T>();
+        //}
 
         public async Task<IQueryable<T>> QueryAsync()
         {

@@ -23,6 +23,9 @@ namespace DocumentDB.GetStarted
     using Newtonsoft.Json;
     using SmartMonitoring.Framework.DocumentDB;
     using SmartMonitoring.Framework.Models.Core;
+    using System.Collections;
+    using System.Collections.Generic;
+       using System.Linq.Expressions;
     /// <summary>
     /// This GetStarted sample demonstrates the creation of resources and execution of simple queries.  
     /// </summary>
@@ -86,13 +89,16 @@ namespace DocumentDB.GetStarted
         /// <returns>The Task for asynchronous completion.</returns>
         private async Task GetStartedDemo()
         {
-            // Create a new instance of the DocumentClient
-            this.client = new DocumentClient(new Uri(EndpointUrl), PrimaryKey);
+                        // Create a new instance of the DocumentClient
+                  this.client = new DocumentClient(new Uri(EndpointUrl), PrimaryKey);
 
-            await this.client.CreateDatabaseIfNotExistsAsync(new Database { Id = "FamilyDB" });
+            //  await this.client.CreateDatabaseIfNotExistsAsync(new Database { Id = "FamilyDB" });
 
-            await this.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("FamilyDB"), new DocumentCollection { Id = "FamilyCollection" });
+            // await this.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("FamilyDB"), new DocumentCollection { Id = "FamilyCollection" });
 
+              await this.client.CreateDatabaseIfNotExistsAsync(new Database { Id = "SchoolWayzDB" });
+
+             await this.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("SchoolWayzDB"), new DocumentCollection { Id = "schoolwayz" });
 
             /*
             // Insert a document, here we create a Family object
@@ -192,15 +198,26 @@ namespace DocumentDB.GetStarted
             Type constructedRepositry = genericRepositry.MakeGenericType(typearg);
 
 
-            IRepositry rep = (IRepositry)Activator.CreateInstance(constructedRepositry);
+            // IRepositry rep = (IRepositry)Activator.CreateInstance(constructedRepositry);
+
+            Repositry<Patron> rep = new Repositry<Patron>();
 
 
             //IRepositry rep = new Repositry<Patron>();
 
-            bool val = await rep.LoadCacheFirstOrDefault(x => x.Id == "f2c255be-abeb-47c9-821d-aff6473b84f7");
-            
+            //bool val = await rep.LoadCacheFirstOrDefault(x => x.Id == "f2c255be-abeb-47c9-821d-aff6473b84f7");
+            //var val = (await rep.Query()).Where(p => p.type.Equals("Patron")).ToList<Patron>().First();
 
-            Console.WriteLine("Executed Fine");
+            bool val = await rep.LoadCacheFirstOrDefault(p => p.type.Equals("Patron"));
+
+
+            if (val != null)
+            {
+                Console.WriteLine("Executed Fine");
+            }else
+            {
+                Console.WriteLine("Executed Bad");
+            }
             // Clean up/delete the database and client
            // await this.client.DeleteDatabaseAsync(UriFactory.CreateDatabaseUri("FamilyDB"));
         }
@@ -367,15 +384,19 @@ namespace DocumentDB.GetStarted
     {
         public string GetCollectionName()
         {
-            return "FamilyCollection";
+            return "schoolwayz";
         }
-        private const string EndpointUrl = "https://localhost:8081";
 
+    //     <Parameter Name = "DocumentDB.EndpointURL" Value="https://dev-schoolwayz-db.documents.azure.com:443/" />
+    //<Parameter Name = "DocumentDB.AuthorizationKey" Value="UTusjz7ILvSWKZPAvzsOeeddXVnLlzjEADqxBHpd8k5QY5OpQetP1pvYuuAY5IoswMEzra2XDAAoyYp56FPChw==" />
+  
+        private const string EndpointUrl = "https://dev-schoolwayz-db.documents.azure.com:443/";
+       // private const string EndpointUrl = "https://localhost:8081";
         /// <summary>
         /// The primary key for the Azure DocumentDB account.
         /// </summary>
-        private const string PrimaryKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
-
+        //private const string PrimaryKey = "C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==";
+        private const string PrimaryKey = "UTusjz7ILvSWKZPAvzsOeeddXVnLlzjEADqxBHpd8k5QY5OpQetP1pvYuuAY5IoswMEzra2XDAAoyYp56FPChw==";
         private DocumentClient client;
         private DocumentDbRepository<TValue> repDb;
         public Repositry()
@@ -389,12 +410,17 @@ namespace DocumentDB.GetStarted
         {
             this.client = new DocumentClient(new Uri(EndpointUrl), PrimaryKey);
 
-            await this.client.CreateDatabaseIfNotExistsAsync(new Database { Id = "FamilyDB" });
+            await this.client.CreateDatabaseIfNotExistsAsync(new Database { Id = "SchoolWayzDB" });
 
-            await this.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("FamilyDB"), new DocumentCollection { Id = "FamilyCollection" });
+            await this.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("SchoolWayzDB"), new DocumentCollection { Id = "schoolwayz" });
 
 
-            repDb = new DocumentDbRepository<TValue>(this.client, "FamilyDB", GetCollectionName, null);
+//            await this.client.CreateDatabaseIfNotExistsAsync(new Database { Id = "FamilyDB" });
+
+  //          await this.client.CreateDocumentCollectionIfNotExistsAsync(UriFactory.CreateDatabaseUri("FamilyDB"), new DocumentCollection { Id = "FamilyCollection" });
+
+
+            repDb = new DocumentDbRepository<TValue>(this.client, "SchoolWayzDB", GetCollectionName, null);
 
             return true;
         }
@@ -405,10 +431,16 @@ namespace DocumentDB.GetStarted
                 await this.LoadDb();
                 bool loadflag = false;
 
+                //TValue obj = (await repDb.WhereAsync(x => x.type.Equals("Patron"))).ToList<TValue>().First();
+                TValue obj = (await repDb.FirstOrDefaultAsync(x => x.type == "Patron"));
+                //IEnumerable<TValue> obj = (await repDb.FirstOrDefaultAsync(x => x.type == "Patron")).ToList();
+                //TValue obj = (await repDb.QueryAsync()).Where(x => x.type.Equals("Patron")).FirstOrDefault();
+                //List obj = (await this.repDb.FirstOrDefaultAsync(x => x.type == "Patron"));
+                //List<TValue> obj = (await repDb.WhereAsync(x => x.type.Equals("Patron"))).ToList<TValue>();
+                ////TValue obj = (await repDb.QueryAsync()).Where(x => x.type.Equals("Patron")).ToList<TValue>().First();
 
-
-                TValue obj = (await repDb.WhereAsync(selector)).ToList<TValue>().First();
-
+                //  TValue obj = (await repDb.WhereAsync(x => selector.Invoke(x))).ToList<TValue>().First();
+                // TValue obj = (await repDb.WhereAsync(x => x.type.Equals("Patron"))).ToList<TValue>().First();
                 if (obj != null)
                 {
                     // Add to Cache without syncing with DB, becasue it's loading itself from DB
@@ -434,6 +466,12 @@ namespace DocumentDB.GetStarted
         {
             return this.LoadCacheFirstOrDefault(selector);
         }
+
+        public async Task<IQueryable<TValue>> Query()
+        {
+            return await this.repDb.QueryAsync();
+        }
+
     }
 
 
